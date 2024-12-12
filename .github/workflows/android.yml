@@ -23,6 +23,9 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
+    - name: Create cache dir if not exists
+      run: mkdir -p ~/.android/build-cache && mkdir -p ~/.android/cache
+
     - name: Restore Gradle Cache
       uses: actions/cache/restore@v4
       with:
@@ -45,7 +48,6 @@ jobs:
             ~/.android/build-cache
             ~/.android/cache
           key: android-${{ github.run_id }}
-          restore-keys: android-
       
     - name: Build with Gradle
       run: ./gradlew build
