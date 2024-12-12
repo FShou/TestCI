@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        viewModel.setName("Dicoding")
+        viewModel.setName("Dick")
         viewModel.message.observe(this) {
             binding.tvWelcome.text = it.welcomeMessage
         }
